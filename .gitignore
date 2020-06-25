@@ -2,4 +2,4 @@
 .DS_Store
 **/migrations/
 db.splite3
-.pyc
+*.pyc 
