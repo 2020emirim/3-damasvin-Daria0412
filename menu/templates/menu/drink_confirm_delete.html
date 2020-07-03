@@ -3,5 +3,15 @@
         <meta charset="utf-8">
         <title>confirm delete</title>
     </head>
-    
+    <body>
+        <h1>{{drink}}</h1>
+        {% if drink.image != ''%}
+        <img src = {{drink.image.url}} alt =''>
+        {% endif %}
+        <form action = "" method=post>
+            {% csrf_token %}
+            <button type=submit>delete</button>
+            <button type=button onclick="history.back()">cancel</button>
+        </form>
+    </body>
 </html>

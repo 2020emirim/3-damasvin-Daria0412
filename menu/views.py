@@ -11,16 +11,17 @@ class DrinkList(ListView):  # bookmark_list.html
 
 class CoffeeCreateView(CreateView):  # bookmark_form.html
     model = Coffee
-    fields = '__all__'  # <from>태그가 들어가는 곳에 넣어줌
-    template_name = 'drink_create.html' 
+    fields = '__all__'  # <form>태그가 들어가는 곳에 넣어줌
+    template_name = 'menu/drink_create.html' 
     success_url = reverse_lazy('menu:list')
+    initial = {'category':'Coffee'}
 
 class BubbleteaCreateView(CreateView):  # bookmark_form.html
     model = Bubbletea
-    fields = '__all__'  # <from>태그가 들어가는 곳에 넣어줌
-    template_name = 'drink_create.html' 
+    fields = '__all__'  # <form>태그가 들어가는 곳에 넣어줌
+    template_name = 'menu/drink_create.html' 
     success_url = reverse_lazy('menu:list')
-
+    initial = {'category':'Bubbletea'}
 
 class DrinkUpdateView(UpdateView):
     model = Drink
