@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>coffee Add</title>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>drink</th>
+                    <th>modify</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in order_list %}
+                <tr>  
+                    <td>{{ forloop.counter}}</td>
+                    <td>{{ order }}</td>
+                    <td><a href="{% url 'order:update' pk=order.id %}">Modify</a></td>
+                    <td><a href="{% url 'order:delete' pk=order.id %}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>    
+        <a href="{% url 'order:add_coffee'%}">add coffee</a>
+        <a href="{% url 'order:add_bubbletea'%}">add bubbletea</a>
+    </head>
+
+</html>

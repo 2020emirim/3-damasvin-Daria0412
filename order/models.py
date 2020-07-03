@@ -1,4 +1,5 @@
 from django.db import models
+from menu.models import *
 
 class Order(models.Model):
     drink = models.ForeignKey(Drink, on_delete=models.CASCADE, related_name = 'order')
@@ -9,5 +10,5 @@ class Order(models.Model):
     price = models.IntegerField()
 
     def __str__(self):
-        return f'음료 : {sekf.drink}, 개수 : {sekf.stock}, 컵사이즈 : {sekf.cup}, 얼음량 : {sekf.ice}, 당도 : {sekf.sugar}, 가격 : {sekf.price}'
+        return f'음료 : {self.drink}, 개수 : {self.stock}, 컵사이즈 : {self.cup}, 얼음량 : {self.ice}, 당도 : {self.sugar}, 가격 : {self.price}'
 
