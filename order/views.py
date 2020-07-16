@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic import ListView
 
-from order.models import *
+from order.models import Order
 
 
-class OrderList(ListView):  
+class OrderListView(ListView):
     model = Order

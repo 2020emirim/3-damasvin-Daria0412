@@ -1,8 +1,9 @@
 from django.urls import path
 
-from order.views import *
+from order.views import OrderListView
+
 app_name = 'order'
 
 urlpatterns = [
-    path('', OrderList.as_view(), name='list'),  # {% url 'bookmark:list %}
+    path('', OrderListView.as_view(), name='list')
 ]

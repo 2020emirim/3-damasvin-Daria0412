@@ -1,10 +1,11 @@
 from django.urls import path
 
-from menu.views import *
+from menu.views import DrinkListView, CoffeeCreateView, BubbleteaCreateView, DrinkUpdateView, DrinkDeleteView
+
 app_name = 'menu'
 
 urlpatterns = [
-    path('', DrinkList.as_view(), name='list'),  # {% url 'bookmark:list %}
+    path('', DrinkListView.as_view(), name='list'),
     path('add_coffee/', CoffeeCreateView.as_view(), name='add_coffee'),
     path('add_bubbletea/', BubbleteaCreateView.as_view(), name='add_bubbletea'),
     path('update/<int:pk>/', DrinkUpdateView.as_view(), name='update'),
